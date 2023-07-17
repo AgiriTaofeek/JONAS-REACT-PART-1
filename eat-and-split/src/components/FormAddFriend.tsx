@@ -21,9 +21,9 @@ const FormAddFriend = ({ onAddFriend }: FormAddFriendProps) => {
       image: `${image}?=${id}`,
       balance: 0,
     };
-
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     onAddFriend(newFriend);
-    // console.log(newFriend);
     setName("");
     setImage("https://i.pravatar.cc/48");
   }

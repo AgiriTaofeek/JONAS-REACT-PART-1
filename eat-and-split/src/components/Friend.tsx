@@ -8,11 +8,8 @@ type FriendProps = {
 };
 
 const Friend = ({ friend, onSelection, selectedFriend }: FriendProps) => {
-  //NOTE - TS specific (type narrowing)
-  let isSelected = null;
-  if (selectedFriend) {
-    isSelected = friend.id === selectedFriend.id;
-  }
+  //NOTE - Optional Chaining is used here because by default the selectedFriend is null which will lead to an error
+  const isSelected = selectedFriend?.id === friend.id;
   return (
     <li className={isSelected ? "selected" : ""}>
       <img src={friend.image} alt={friend.name} />
